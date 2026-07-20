@@ -39,7 +39,7 @@
   
 // INITLIZING SERVICE-WORKER & STORAGE PERSIST
   window.onload = ()=>{
-    ServiceWorkerInitlize();
+    //ServiceWorkerInitlize();
     StorageInitlize();
   }
   
