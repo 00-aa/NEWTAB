@@ -1,0 +1,106 @@
+  <!DOCTYPE html>
+  <html lang="en" translate="no">
+  <head>
+  <!-- BROWSER CONFIG -->
+    <title>New Tab</title>
+    <meta name="description" content="CREATE YOUR NEW TAB WITH US BY:K">
+    <meta name="keywords" content="PWA, WEB APP, APP, KRUSHNA">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+    
+    <link rel="shortcut icon" type="image/x-icon" sizes="1024x1024" href="/0.png">
+    <meta property="og:image" content="/0.png">
+    <meta property="og:image:secure_url" content="/0.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:image:alt" content="shortcut icon">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=off, maximum-scale=1, interactive-widget=overlays-content">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="google" content="notranslate">
+    
+  <!-- FILE CONFIG -->
+    <link rel="manifest" href="/NEWTAB/manifest.json" blocking="render">
+    <link rel="stylesheet" href="/NEWTAB/app.css" type="text/css" media="all" blocking="render">
+    <script defer async src="/NEWTAB/app.js" type="module" charset="utf-8" blocking="render"></script>
+    
+    <link rel="stylesheet" href="/NEWTAB/style.css" blocking="render">
+    <script src="/NEWTAB/main.js" async defer blocking="render"></script>
+    
+    <link rel="preload" href="/NEWTAB/ASSETS/BACKGROUNDS/00.mp4">
+    
+    
+  </head>
+  <video id="MAIN-LIVE-BACKGROUND" class="main-live-background" src="/NEWTAB/ASSETS/BACKGROUNDS/00.mp4" autoplay muted loop preload="true" playsinline fetchpriority="high"></video>
+  <body>
+    <main>
+      
+      <nav class="nav-topbar-container">
+        <div class="nav-settings-container glassmorph-background-active" id="MAIN_SETTINGS_CONTAINER">
+        
+          <button class="nav-settings-toggle-btn" popovertarget="settings-container-popover">
+            <img src="/NEWTAB/ASSETS/ICONS/settings.svg" loading="lazy">
+          </button>
+          
+          <div class="nav-settings-menu-container glassmorph-background-active" id="settings-container-popover" popover>
+            <span class="h1-container">
+              <h1>Settings</h1>
+            </span>
+            
+            <span>
+              <input type="range" class="glassmorph-background-active" id="INP_BG_BLUR" min="0" max="200">
+            </span>
+            
+            <span>
+              <input type="range" id="INP_BG_RADIUS" class="glassmorph-background-active" min="0" max="400">
+            </span>
+            
+            <span class="theme-select-container">
+              <input type="radio" name="theme-select-group" id="INP_THEME" class="glassmorph-background-active" value="dark" checked />
+              <input type="radio" name="theme-select-group" id="INP_THEME" class="glassmorph-background-active" value="light"/>
+            </span>
+            
+            <span>
+              <select id="INP_BG_VIDEO" class="glassmorph-background-active">
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/00.mp4">EVIL LADY</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/01.mp4">BMW BLUE ON STREET</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/02.mp4">BMW WHITE CLOSE UP</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/03.mp4">BMW BLUE IN SPACE DRIFT</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/04.mp4">LONE SOUL ON HIS WAY</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/05.mp4">NO RAIN BUT WHITE UMBRELLA</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/06.mp4">INSECT HASHIRA</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/07.mp4">RED DEMONESS</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/08.mp4">ERROR: WARNING</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/09.mp4">ZENITSU AGATSUMA LIGHTNINE</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/10.mp4">THE BIG EYE</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/11.mp4">ZENITSU AGATSUMA</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/12.mp4">SHY GIRL ANIME</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/13.mp4">WUTHERING WAVES</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/14.mp4">THUG LIFE PIXEL MINECRAFT</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/15.mp4">THE INFINITY SPACE</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/16.mp4">RED HOTTY</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/17.mp4">SHHHHHHH</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/18.mp4">DEMON AURA</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/19.mp4">ENCHANTED DAGGER</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/20.mp4">BLUE CUTE EYE</option>
+                <option value="/NEWTAB/ASSETS/BACKGROUNDS/21.mp4">BLACK DEMONESS</option>
+              </select>
+            </span>
+            
+          </div>
+        </div>
+        
+      </nav>
+      <section class="main-container">
+        <textarea id="InpSearch" contenteditable="true" autofocus autocapitalize="yes" spellcheck="true" role="textbox" class="glassmorph-background-active" placeholder="Search Something..."></textarea>
+        <button id="InpSearchSubmit" class="glassmorph-background-active">
+          <img src="/NEWTAB/ASSETS/ICONS/search.svg">
+        </button>
+      </section>
+    </main>
+  </body>
+  </html>

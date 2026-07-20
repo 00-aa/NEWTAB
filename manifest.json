@@ -1,0 +1,26 @@
+  {
+    "name": "KRUSHNA",
+    "short_name": "MESSENGER",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "start_url": "/",
+    "scope": "/",
+    "icons": [{
+      "src": "/0.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }],
+    "screenshots": [{
+      "src": "/0.png",
+      "type": "image/png",
+      "sizes": "2048x2048",
+      "form_factor": "narrow",
+      "label": "SCREENSHOT-1"
+    },{
+      "src": "/0.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "form_factor": "narrow",
+      "label": "SCREENSHOT-2"
+    }]
+  }

@@ -1,0 +1,389 @@
+/* MAIN BACKGROUND */
+  .main-live-background{
+    z-index: -999999999;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  body{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  main{
+    width: 100dvh;
+    height: 100dvh;
+    position: fixed;
+    
+    display: flex;
+    flex-direction: column;
+  }
+  
+  :root{
+    --GLASSMORPH-BACKGROUND-BRIGHTNESS: 100%;
+    --GLASSMORPH-BACKGROUND-BLUR: 10px;
+    --GLASSMORPH-BACKGROUND-BLUR-INVERSION: 0%;
+    --GLASSMORPH-BACKGROUND-BLUR-SATURATION: 150%;
+    --GLASSMORPH-BACKGROUND-RADIOUS: 20px;
+    --GLASSMORPH-BACKGROUND-BORDER-COLOR: #ffffff22;
+    --GLASSMORPH-BACKGROUND-COLOR-ACTIVE: #fffffff0;
+    
+    --GLASSMORPH-BACKGROUND-COLOR: #00000044;
+    
+    --TOPBAR-HEIGHT: 70px;
+    --TOPBAR-PADDING: 15px;
+    
+    --TOPBAR-BTN-SIZE: 50px;
+    --TOPBAR-BTN-PADDING: 6px;
+    
+    --TOPBAR-MENU-RADIOUS: calc(var(--GLASSMORPH-BACKGROUND-RADIOUS) * 2);
+    --TOPBAR-MENU-PADDING: 20px;
+    --TOPBAR-MENU-WIDTH: min(98%, 600px);
+  }
+  
+  main{
+    width: 100dvw;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    display: flex;
+    flex-direction: column;
+  }
+  .glassmorph-background-default{
+    backdrop-filter: blur(var(--GLASSMORPH-BACKGROUND-BLUR, 0px)) brightness(var(--GLASSMORPH-BACKGROUND-BRIGHTNESS, 100%)) invert(var(--GLASSMORPH-BACKGROUND-BLUR-INVERSION, 0%)) saturate(var(--GLASSMORPH-BACKGROUND-BLUR-SATURATION, 100%));
+    -webkit-backdrop-filter: blur(var(--GLASSMORPH-BACKGROUND-BLUR, 0px)) brightness(var(--GLASSMORPH-BACKGROUND-BRIGHTNESS, 100%)) invert(var(--GLASSMORPH-BACKGROUND-BLUR-INVERSION, 0%)) saturate(var(--GLASSMORPH-BACKGROUND-BLUR-SATURATION, 100%));
+    background: var(--GLASSMORPH-BACKGROUND-COLOR);
+  }
+  .glassmorph-background-active{
+    backdrop-filter: blur(var(--GLASSMORPH-BACKGROUND-BLUR, 0px)) brightness(var(--GLASSMORPH-BACKGROUND-BRIGHTNESS, 100%)) invert(var(--GLASSMORPH-BACKGROUND-BLUR-INVERSION, 0%)) saturate(var(--GLASSMORPH-BACKGROUND-BLUR-SATURATION, 100%));
+    -webkit-backdrop-filter: blur(var(--GLASSMORPH-BACKGROUND-BLUR, 0px)) brightness(var(--GLASSMORPH-BACKGROUND-BRIGHTNESS, 100%)) invert(var(--GLASSMORPH-BACKGROUND-BLUR-INVERSION, 0%)) saturate(var(--GLASSMORPH-BACKGROUND-BLUR-SATURATION, 100%));
+    background: var(--GLASSMORPH-BACKGROUND-COLOR);
+    border: 1px solid var(--GLASSMORPH-BACKGROUND-BORDER-COLOR);
+    border-radius: var(--GLASSMORPH-BACKGROUND-RADIOUS);
+  }
+  
+  
+  
+  
+  
+  
+  
+  .nav-topbar-container{
+    width: 100%;
+    height: var(--TOPBAR-HEIGHT);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0 var(--TOPBAR-PADDING);
+  }
+  .nav-settings-container{
+    width: var(--TOPBAR-BTN-SIZE);
+    height: var(--TOPBAR-BTN-SIZE);
+    aspect-ratio: 1 / 1;
+    padding: var(--TOPBAR-BTN-PADDING);
+    display: grid;
+    place-items: center;
+    
+    transition: .1s ease-in allow-discrete;
+  }
+  .nav-settings-container:active{
+    scale: 0.9;
+    border-color: var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+  }
+  .nav-settings-toggle-btn{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border: none;
+  }
+  .nav-settings-menu-container{
+    padding: var(--TOPBAR-MENU-PADDING);
+    border-radius: 0;
+    border-top-left-radius: var(--TOPBAR-MENU-RADIOUS);
+    border-top-right-radius: var(--TOPBAR-MENU-RADIOUS);
+    
+    justify-items: center;
+    
+    border: 2px solid var(--GLASSMORPH-BACKGROUND-BORDER-COLOR);
+    box-shadow: 0 0 10vh var(--GLASSMORPH-BACKGROUND-BORDER-COLOR);
+    
+  }
+  .nav-settings-menu-container{
+    width: var(--TOPBAR-MENU-WIDTH);
+    min-height: 25%;
+    max-height: 75%;
+    height: auto;
+    position: fixed;
+    top: calc(100% - var(--TOPBAR-MENU-HEIGHT));
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+    transition: .3s linear allow-discrete;
+    opacity: 0;
+    translate: 0 50%;
+    
+    &:popover-open{
+      opacity: 1;
+      translate: 0 0;
+      
+      @starting-style {
+        opacity: 0;
+        translate: 0 25%;
+      }
+    }
+  }
+  
+  
+  
+  .h1-container{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 150%;
+    color: var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+    border-bottom: 2px solid var(--GLASSMORPH-BACKGROUND-BORDER-COLOR);
+    margin-bottom: var(--TOPBAR-PADDING);
+    padding-bottom: var(--TOPBAR-PADDING);
+  }
+  
+  
+  
+  #INP_BG_BLUR,
+  #INP_BG_RADIUS,
+  #INP_BG_VIDEO,
+  #INP_THEME,
+  ::picker(select){
+    width: 100%;
+    height: calc(var(--TOPBAR-BTN-SIZE) / 1.2);
+    border-radius: var(--GLASSMORPH-BACKGROUND-RADIOUS);
+    margin-bottom: var(--TOPBAR-PADDING);
+    background: transparent;
+    box-shadow: 0 0 10vh var(--GLASSMORPH-BACKGROUND-COLOR);
+    transition: .15s ease-in;
+  }
+  
+  input:hover,
+  select:open,
+  select:hover{
+    border-color: var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+  }
+  
+  
+  
+  
+  #INP_BG_BLUR,
+  #INP_BG_RADIUS{
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  #INP_BG_BLUR::-webkit-slider-thumb,
+  #INP_BG_RADIUS::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 0;
+    box-shadow: -100vw 0 0 100vw var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+  }
+  
+  
+  
+  #INP_BG_BLUR::after,
+  #INP_BG_RADIUS::after,
+  #INP_BG_VIDEO::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: var(--TOPBAR-PADDING);
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
+  #INP_BG_BLUR::after{
+    background: no-repeat center url("/NEWTAB/ASSETS/ICONS/theme.svg");
+    background-position: left;
+  }
+  #INP_BG_RADIUS::after{
+    background: no-repeat center url("/NEWTAB/ASSETS/ICONS/border-radius.svg");
+    background-position: left;
+  }
+  #INP_BG_VIDEO::after {
+    content: "BACKGROUND";
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #ffffffaa;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding-left: 50px;
+    background: no-repeat center url("/NEWTAB/ASSETS/ICONS/wallpaper.svg");
+    background-position: left;
+    
+  }
+  
+  
+  
+  
+  #INP_BG_VIDEO{
+    appearance: base-select;
+    align-items: center;
+    padding: var(--TOPBAR-PADDING);
+    color: transparent;
+  }
+  ::picker(select){
+    appearance: base-select;
+    width: auto;
+    height: auto;
+    max-height: 40vh;
+    box-shadow: 0 0 10vh var(--GLASSMORPH-BACKGROUND-BORDER-COLOR);
+    
+    backdrop-filter: blur(var(--GLASSMORPH-BACKGROUND-BLUR, 0px)) brightness(var(--GLASSMORPH-BACKGROUND-BRIGHTNESS, 100%)) invert(var(--GLASSMORPH-BACKGROUND-BLUR-INVERSION, 0%)) saturate(var(--GLASSMORPH-BACKGROUND-BLUR-SATURATION, 100%));
+    -webkit-backdrop-filter: blur(var(--GLASSMORPH-BACKGROUND-BLUR, 0px)) brightness(var(--GLASSMORPH-BACKGROUND-BRIGHTNESS, 100%)) invert(var(--GLASSMORPH-BACKGROUND-BLUR-INVERSION, 0%)) saturate(var(--GLASSMORPH-BACKGROUND-BLUR-SATURATION, 100%));
+    background: var(--GLASSMORPH-BACKGROUND-COLOR);
+    border: 1px solid var(--GLASSMORPH-BACKGROUND-BORDER-COLOR);
+    border-radius: var(--GLASSMORPH-BACKGROUND-RADIOUS);
+    
+    transition: .3s ease-in allow-discrete;
+    scale: 0.95;
+    translate: 0 25%;
+    @starting-style {
+      opacity: 0;
+      scale: 0.75;
+    }
+    
+  }
+  #INP_BG_VIDEO::picker-icon{
+    content: "✓";
+    color: #fff;
+    padding: var(--TOPBAR-PADDING);
+    font-weight: bold;
+    font-size: 111%;
+  }
+  #INP_BG_VIDEO > option{
+    height: var(--TOPBAR-BTN-SIZE);
+    align-items: center;
+    justify-content: left;
+    font-weight: bold;
+    padding: var(--TOPBAR-PADDING);
+    background: transparent;
+    border-bottom: 1px solid var(--GLASSMORPH-BACKGROUND-BORDER-COLOR);
+  }
+  
+  
+  
+  
+  .theme-select-container{
+    width: 100%;
+    display: flex;
+    overflow: visible;
+    padding: 3px 0;
+  }
+  #INP_THEME{
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 0 0 48%;
+    
+    background: no-repeat center url("/NEWTAB/ASSETS/ICONS/sun.svg");
+    background-position: left;
+  }
+  #INP_THEME:first-child{
+    margin-right: auto;
+    background: no-repeat center url("/NEWTAB/ASSETS/ICONS/moon.svg");
+    background-position: left;
+  }
+  
+  #INP_THEME:checked{
+    border-color: var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+    transform: translate(-4px, 0);
+  }
+  #INP_THEME:first-child:checked{
+    transform: translate(4px, 0);
+  }
+  #INP_THEME:checked::after{
+    content: "✓";
+    color: var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+    padding: 10px;
+    font-weight: bold;
+    font-size: 111%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    right: var(--TOPBAR-PADDING);
+  }
+  
+  .main-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: var(--TOPBAR-PADDING);
+    
+  }
+  #InpSearch{
+    background: transparent;
+    position: absolute;
+    width: calc(100% - var(--TOPBAR-PADDING) * 2);
+    max-width: var(--TOPBAR-MENU-WIDTH);
+    min-height: var(--TOPBAR-BTN-SIZE);
+    max-height: 50vw;
+    padding: var(--TOPBAR-PADDING);
+    
+    font-size: 101%;
+    outline: none;
+    
+    transition: .3s linear;
+    caret-color: var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+    caret-shape: auto;
+    
+    border-radius: min(calc(var(--TOPBAR-PADDING) * 1.75), var(--GLASSMORPH-BACKGROUND-RADIOUS));
+    resize: none;
+    field-sizing: content;
+    anchor-name: --search-box;
+  }
+  #InpSearch::placeholder{
+    color: #aaa;
+  }
+  #InpSearch:focus-within,
+  #InpSearchSubmit:active{
+    border-color: var(--GLASSMORPH-BACKGROUND-COLOR-ACTIVE);
+  }
+  #InpSearchSubmit:active{
+    scale: 0.65;
+  }
+  #InpSearch:not(:placeholder-shown)  + #InpSearchSubmit{
+    width: calc(var(--TOPBAR-BTN-SIZE) * 1.5);
+  }
+  
+  #InpSearchSubmit{
+    width: var(--TOPBAR-BTN-SIZE);
+    height: var(--TOPBAR-BTN-SIZE);
+    scale: 0.8;
+    transition: border linear .1s, width linear .3s, scale linear .3s;
+    position-anchor: --search-box;
+    position: absolute;
+    bottom: anchor(bottom, var(--TOPBAR-PADDING)); 
+    right: anchor(right, var(--TOPBAR-PADDING));
+    
+    background: #ffffff11;
+  }
+  #InpSearchSubmit > img{
+    height: 100%;
+    width: auto;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  
+  ::selection {
+    background-color: #ffffff99;
+  }
+  
