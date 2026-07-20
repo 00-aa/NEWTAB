@@ -1,7 +1,7 @@
 // MAIN CACHE CONFIG
   const ToCacheFileList = [
     "/NEWTAB/0.png",
-    
+    /*
     "/NEWTAB/ASSETS/BACKGROUNDS/00.mp4",
     
     "/NEWTAB/ASSETS/ICONS/border-radius.svg",
@@ -20,7 +20,7 @@
     "/NEWTAB/main.js",
     "/NEWTAB/service-worker.js",
     "/NEWTAB/manifest.json"
-    
+    */
   ],CacheName = 'v21.07.26';
   
   
@@ -42,7 +42,7 @@
       caches.match(event.request).then((response)=>{
         if (response) return response;
         
-        return fetch(event.request).then((networkResponse)=>{
+        return fetch(event.request)/*.then((networkResponse)=>{
           const isSelfOrigin = event.request.url.startsWith(self.location.origin);
           if(isSelfOrigin && networkResponse && networkResponse.status === 200){
             const responseToCache = networkResponse.clone();
@@ -50,7 +50,7 @@
               cache.put(event.request, responseToCache);
             });
           }
-        })
+        })*/
       })
     )
   });
